@@ -3,7 +3,7 @@ and Windows 11 successfully. In addition to this, I am working on video guides o
 setup processes.*
 
 
-# Steps to set up the programming environment for the Spherometer on a Windows 10 machine.
+# Steps to set up the programming environment for the NUCLEO-F446RE on a Windows 10 machine.
 
 ## Installing GNU Make to use the Makefile on Windows
 
@@ -19,7 +19,7 @@ table and then press edit.
 quotes. Then, press "Ok" in each menu until the System environment variables windows are all closed.
 
 **5.** To test if this worked, open VSCode as an administrator and open a new terminal. Type the 
-command "make --version" and it should respond with the version of GNU Make. You may have to exit 
+command `make --version` and it should respond with the version of GNU Make. You may have to exit 
 and reopen VSCode after installing GNU Make for it to work.
 
 
@@ -32,7 +32,7 @@ https://developer.arm.com/downloads/-/gnu-rm.
 "Add path to  environment variable" box and then select "Finish."
 
 **3.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
-the command "arm-none-eabi-gcc --version" and it should respond with the version of the ARM GCC 
+the command `arm-none-eabi-gcc --version` and it should respond with the version of the ARM GCC 
 Compiler.
 
 
@@ -44,7 +44,7 @@ Compiler.
 Then continue installing by pressing next in each following dialogue.
 
 **3.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
-the command "cmake --version" and it should respond with the version of CMake.
+the command `cmake --version` and it should respond with the version of CMake.
 
 
 ## Installing the ST-Link Tool on Windows
@@ -73,15 +73,17 @@ table and then press edit.
 menu until the System environment variables until all windows are all closed.
 
 **8.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
-the command "stflash --version" and it should respond with the version of the stflash tool.
+the command `stflash --version` and it should respond with the version of the stflash tool.
 
-### VSCode Configuration (You can use any editor you want to if you are familiar with terminal and Make)
+# VSCode Configuration For All Operating Systems (You can use any editor you want to if you are familiar with terminal and Make) 
 
 **1.** Open VSCode and open a new terminal. If you are unfamiliar with the command terminal, that is 
 okay. What this step is for is for getting this repository onto your device.
 
 **2.** In the terminal, type `git clone https://github.com/jakeclarey/STM32F446/`. This should clone the
-repository to your device. Within here, open the Makefile.
+repository to your device. Within here, open the Makefile. If you do not have git nor want to use git,
+(*why and how are you reading this*), go to that github link and download the repository as a zip. Then
+open the whole folder in VSCode. You may place the repository anywhere on your machine.
 
 **3.** In the Makefile at the very top, there is a variable titled `MACOS_LINUX`. If you are using 
 MacOS or Linux, set the variable equal to 1, if on Windows, set the variable equal to 0. 
@@ -100,7 +102,7 @@ text as the original one letter-by-letter. Odds are the the painful route is unn
 
 **5.** Now in the same terminal, enter `make clean`. This should clear out the !build folder. If it does
 not, then the `make clean` selection for your operating system is bugged. To fix it, check and make sure
-the `MACOS_LINUX` variable is set properly from step **3.** and then if it remains unworking, check for
+the `MACOS_LINUX` variable is set properly from step **3.** and then if it continues to fail, check for
 information on the error received in the terminal.
 
 ## The setup for the environment should be complete after this. 
@@ -126,5 +128,5 @@ DFU can be configured to work, but it is a lengthy process. DFU is mostly for fl
 hardware. If you would like to know more about testing DFU on a NUCLEO board, I have done it before
 and would be happy to explain the steps. 
 
-# Steps to set up the programming environment for the Spherometer on a MacOs machine.
+# Steps to set up the programming environment for the NUCLEO-F446RE on a MacOs machine.
 
