@@ -38,7 +38,7 @@ Compiler.
 
 ## Installing CMake on Windows
 
-**1.** Install cmake-XXXX-windows-x86_6**4.**msi from the following website https://cmake.org/download/.
+**1.** Install cmake-XXXX-windows-x86_64.msi from the following website https://cmake.org/download/.
 
 **2.** Run the installer tool and check the circle titled "Add CMake to the system PATH for all users." 
 Then continue installing by pressing next in each following dialogue.
