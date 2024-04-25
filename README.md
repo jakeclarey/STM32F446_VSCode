@@ -72,11 +72,11 @@ table and then press edit.
 "C:\stlink\stlink-1.7.0-x86_64-w64-mingw32.zip\bin" without the quotes. Then, press "Ok" in each 
 menu until the System environment variables until all windows are all closed.
 
-**3.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
+**8.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
 the command "stflash --version" and it should respond with the version of the stflash tool.
 
 
-### The setup for the environment should be complete after this. 
+## The setup for the environment should be complete after this. 
 
 To build the code, I have included a couple tasks in the .vscode\tasks.json file. To invoke these 
 task commands, the default shortcut is Ctrl+Shift+B. 
