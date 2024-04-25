@@ -123,6 +123,12 @@ compiled and linked on a new build and this task executes everytime before a Bui
 
 Flash controller flashes the bin file to the controller. Whoa.. who could have guessed.
 
+Open UART Terminal is specific to Linux and MacOS and uses the `screen` command to work. I have not
+yet found a good alternative for Windows, but you can always use a terminal emulator like TeraTerm.
+To exit this terminal, press `Cmd+A Cmd+K` and then type `Y`. *This will be used for viewing
+redirected printf() functions to a UART terminal in the future, I just have to figure out how to
+redirect them myself first*
+
 DFU controller is another way of flashing the code to the controller. It uses the dfu-util 
 toolchain, I have not included steps on installing that on a Windows machine. This is because it 
 does not apply to the board of this project by default.

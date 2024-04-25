@@ -6,8 +6,8 @@
  * VSCode STM32 programming environment using a GNU Makefile. This can be modified for other MCUs.
  *************************************************************************************************/
 
-#include <stm32f446xx.h>
 #include "blink.h"
+#include <stm32f446xx.h>
 
 int main(void)
 {
