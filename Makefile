@@ -1,9 +1,12 @@
 ###################################################################################################
-# Makefile rev 1.01 [4/25/24]
+# Makefile rev 1.02 [4/25/24]
 ###################################################################################################
 
 # Project folder name holder (default to build Blinky if not specified in tasks.json or on CLI)
 PROJECT_NAME = Blinky
+
+# Set to 1 if using MacOS or Linux, Set to 0 if using Windows
+MACOS_LINUX = 1
 
 # make target should be named "main"
 TARGET = main
@@ -150,15 +153,21 @@ $(BUILD_DIR):
 	mkdir $@		
 
 ###################################################################################################
-# clean (If on MacOS or Linux, comment out the 1st "clean" rule, then uncomment the 2nd clean rule)
+# clean
 ###################################################################################################
 .PHONY: clean
 
+ifeq ($(MACOS_LINUX), 0)
 clean:
 	del /f /Q $(BUILD_DIR)\
 
-#clean:
-  #rm -f $(BUILD_DIR)/*
+endif 
+
+ifeq ($(MACOS_LINUX), 1)
+clean:
+	rm -f $(BUILD_DIR)/*
+
+endif
 
 ###################################################################################################
 # dependencies
