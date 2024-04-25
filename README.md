@@ -83,7 +83,7 @@ the command `stflash --version` and it should respond with the version of the st
 **1.** Open VSCode and open a new terminal. If you are unfamiliar with the command terminal, that is 
 okay. What this step is for is for getting this repository onto your device.
 
-**2.** In the terminal, type `gh repo create -p --template https://github.com/jakeclarey/STM32F446_VSCODE/`. 
+**2.** In the terminal, type `git clone https://github.com/jakeclarey/STM32F446_VSCODE/`. 
 This should clone the repository to your device. Within here, open the Makefile. If you do not have git nor 
 want to use git, (*why and how are you reading this*), go to that github link and download the repository as 
 a .zip file. Then open the whole folder in VSCode. You may place the repository anywhere on your machine.
