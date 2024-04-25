@@ -9,7 +9,6 @@
 #include <stm32f446xx.h>
 #include "blink.h"
 
-
 int main(void)
 {
   gpioInit();
