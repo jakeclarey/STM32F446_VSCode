@@ -3,9 +3,9 @@ and Windows 11 successfully. In addition to this, I am working on video guides o
 setup processes.*
 
 
-#Steps to set up the programming environment for the Spherometer on a Windows 10  Laptop.
+# Steps to set up the programming environment for the Spherometer on a Windows 10  Laptop.
 
-##Installing GNU Make to use the Makefile on Windows
+## Installing GNU Make to use the Makefile on Windows
 
 **1.** Install GNU Make from https://gnuwin32.sourceforge.net/packages/make.htm using the 
 "Setup program" option for installing.
@@ -23,7 +23,7 @@ command "make --version" and it should respond with the version of GNU Make. You
 and reopen VSCode after installing GNU Make for it to work.
 
 
-##Installing the GCC ARM Compiler on Windows 
+## Installing the GCC ARM Compiler on Windows 
 
 **1.** Install gcc-arm-none-eabi-XXXXXXX-win32.exe from the following website 
 https://developer.arm.com/downloads/-/gnu-rm.
@@ -36,7 +36,7 @@ the command "arm-none-eabi-gcc --version" and it should respond with the version
 Compiler.
 
 
-##Installing CMake on Windows
+## Installing CMake on Windows
 
 **1.** Install cmake-XXXX-windows-x86_6**4.**msi from the following website https://cmake.org/download/.
 
@@ -47,7 +47,7 @@ Then continue installing by pressing next in each following dialogue.
 the command "cmake --version" and it should respond with the version of CMake.
 
 
-Installing the ST-Link Tool on Windows
+## Installing the ST-Link Tool on Windows
 
 **1.** Open the following github repository https://github.com/stlink-org/stlink and on the right side 
 of the website click on "Release v1.x.x" under the releases tab. This will take you to the releases
@@ -76,7 +76,7 @@ menu until the System environment variables until all windows are all closed.
 the command "stflash --version" and it should respond with the version of the stflash tool.
 
 
-###The setup for the environment should be complete after this. 
+### The setup for the environment should be complete after this. 
 
 To build the code, I have included a couple tasks in the .vscode\tasks.json file. To invoke these 
 task commands, the default shortcut is Ctrl+Shift+B. 
