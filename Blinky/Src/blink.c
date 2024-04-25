@@ -31,3 +31,5 @@ void bruteDelay(uint32_t n)
     n--; // optimizes out if the loop does nothing, so count down 2nd time
   }
 }
+
+/* EOF */
