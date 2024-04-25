@@ -2,6 +2,9 @@
 and Windows 11 successfully. In addition to this, I am working on video guides on each of these
 setup processes.*
 
+# Steps to set up the programming environment for the NUCLEO-F446RE on a MacOs machine.
+
+# Steps to set up the programming environment for the NUCLEO-F446RE on a Linux machine.
 
 # Steps to set up the programming environment for the NUCLEO-F446RE on a Windows 10 machine.
 
@@ -126,7 +129,4 @@ does not apply to the board of this project by default.
 
 DFU can be configured to work, but it is a lengthy process. DFU is mostly for flashing custom 
 hardware. If you would like to know more about testing DFU on a NUCLEO board, I have done it before
-and would be happy to explain the steps. 
-
-# Steps to set up the programming environment for the NUCLEO-F446RE on a MacOs machine.
-
+and would be happy to explain the steps if you contact me. 
