@@ -75,6 +75,33 @@ menu until the System environment variables until all windows are all closed.
 **8.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
 the command "stflash --version" and it should respond with the version of the stflash tool.
 
+### VSCode Configuration (You can use any editor you want to if you are familiar with terminal and Make)
+
+**1.** Open VSCode and open a new terminal. If you are unfamiliar with the command terminal, that is 
+okay. What this step is for is for getting this repository onto your device.
+
+**2.** In the terminal, type `git clone https://github.com/jakeclarey/STM32F446/`. This should clone the
+repository to your device. Within here, open the Makefile.
+
+**3.** In the Makefile at the very top, there is a variable titled `MACOS_LINUX`. If you are using 
+MacOS or Linux, set the variable equal to 1, if on Windows, set the variable equal to 0. 
+
+*This is important for the `make clean` rule. The way to clean a directory is different between 
+MacOS/Linux and Windows. This variable is here to keep you, the user, out of the Makefile. The Makefile
+can be confusing to understand if unfamiliar, and I want this to be as simple as possible.*
+
+**4.** Open the terminal again, type `make all` and this should build the default Blinky project. If it
+does not work. Look up the error code you receive and try to debug it. I am unsure about what errors can
+occur because I don't run into them as frequently anymore. **One error I am aware of is the 
+`missing separator` error. What this means is that somewhere in the code, a `tab` was replaced with a 
+`space` which are interpreted differently by GNU Make. To fix this I recommend skimming the file where
+tabs should be, and re-entering them, or the painful route, create a new Makefile and type up the same
+text as the original one letter-by-letter. Odds are the the painful route is unnecessary.**
+
+**5.** Now in the same terminal, enter `make clean`. This should clear out the !build folder. If it does
+not, then the `make clean` selection for your operating system is bugged. To fix it, check and make sure
+the `MACOS_LINUX` variable is set properly from step **3.** and then if it remains unworking, check for
+information on the error received in the terminal.
 
 ## The setup for the environment should be complete after this. 
 
