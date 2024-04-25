@@ -3,7 +3,7 @@ and Windows 11 successfully. In addition to this, I am working on video guides o
 setup processes.*
 
 
-# Steps to set up the programming environment for the Spherometer on a Windows 10  Laptop.
+# Steps to set up the programming environment for the Spherometer on a Windows 10 machine.
 
 ## Installing GNU Make to use the Makefile on Windows
 
@@ -98,3 +98,6 @@ does not apply to the board of this project by default.
 DFU can be configured to work, but it is a lengthy process. DFU is mostly for flashing custom 
 hardware. If you would like to know more about testing DFU on a NUCLEO board, I have done it before
 and would be happy to explain the steps. 
+
+# Steps to set up the programming environment for the Spherometer on a MacOs machine.
+
