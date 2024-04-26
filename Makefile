@@ -5,9 +5,6 @@
 # Project folder name holder (default to build Blinky if not specified in tasks.json or on CLI)
 PROJECT_NAME = Blinky
 
-# Set to 1 if using MacOS or Linux, Set to 0 if using Windows
-MACOS_LINUX = 0
-
 # make target should be named "main"
 TARGET = main
 
@@ -189,13 +186,11 @@ $(BUILD_DIR):
 ###################################################################################################
 .PHONY: clean
 
-ifeq ($(MACOS_LINUX), 0)
+ifeq ($(OS), Windows_NT)
 clean:
 	del /f /Q $(BUILD_DIR)\
 
-endif 
-
-ifeq ($(MACOS_LINUX), 1)
+else
 clean:
 	rm -f $(BUILD_DIR)/*
 
