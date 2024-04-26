@@ -89,12 +89,12 @@ This should clone the repository to your device. Within here, open the Makefile.
 want to use git, (*why and how are you reading this*), go to that github link and download the repository as 
 a .zip file. Then open the whole folder in VSCode. You may place the repository anywhere on your machine.
 
-**3.** In the Makefile at the very top, there is a variable titled `MACOS_LINUX`. If you are using 
+~~**3.** In the Makefile at the very top, there is a variable titled `MACOS_LINUX`. If you are using 
 MacOS or Linux, set the variable equal to 1, if on Windows, set the variable equal to 0. 
 
 *This is important for the `make clean` rule. The way to clean a directory is different between 
 MacOS/Linux and Windows. This variable is here to keep you, the user, out of the Makefile. The Makefile
-can be confusing to understand if unfamiliar, and I want this to be as simple as possible.*
+can be confusing to understand if unfamiliar, and I want this to be as simple as possible.*~~ deprecated
 
 **4.** Open the terminal again, type `make all` and this should build the default Blinky project. If it
 does not work. Look up the error code you receive and try to debug it. I am unsure about what errors can
