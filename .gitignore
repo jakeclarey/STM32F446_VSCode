@@ -1,4 +1,0 @@
-*.VC.DB*
-.DS_Store
-\!build/
-.gitignore
