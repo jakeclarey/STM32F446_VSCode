@@ -1,0 +1,3 @@
+*.VC.DB*
+/!build
+.DS_STORE
