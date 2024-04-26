@@ -20,6 +20,7 @@ void bruteDelay(uint32_t n);
 
 void systickInit(void);
 void systickDelayMS(uint32_t n);
+void systickDelayUS(uint32_t n);
 
 #endif // __BLINK_H__
 
