@@ -11,8 +11,9 @@ MACOS_LINUX = 0
 # make target should be named "main"
 TARGET = main
 
+# WARNING: when optimizing for speed, floating point operations can be corrupted.
 DEBUG = 1
-OPT = -O0 # preferred optimization
+OPT = -O0 # preferred optimization. In order for speed: O0, O1, O2, O3, Ofast.
 
 # Build path
 BUILD_DIR = !build
