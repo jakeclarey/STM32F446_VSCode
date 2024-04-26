@@ -9,7 +9,7 @@
 #include "blink.h"
 
 /// @brief This function initializes LD2_PORT LD2_PIN as an output
-void gpioInit(void)
+void initLD2(void)
 {
   RCC->AHB1ENR |= 1;
   LD2_PORT->MODER &= ~(3 << (2 * LD2_PIN));

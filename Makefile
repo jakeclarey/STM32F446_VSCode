@@ -6,7 +6,7 @@
 PROJECT_NAME = Blinky
 
 # Set to 1 if using MacOS or Linux, Set to 0 if using Windows
-MACOS_LINUX = 1
+MACOS_LINUX = 0
 
 # make target should be named "main"
 TARGET = main

@@ -12,9 +12,9 @@
 #include <stm32f446xx.h>
 
 #define LD2_PORT GPIOA
-#define LD2_PIN  5
+#define LD2_PIN 5
 
-void gpioInit(void);
+void initLD2(void);
 void toggleLD2(void);
 void bruteDelay(uint32_t n);
 

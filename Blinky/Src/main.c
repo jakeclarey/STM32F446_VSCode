@@ -11,7 +11,7 @@
 
 int main(void)
 {
-  gpioInit();
+  initLD2();
 
   while (1)
   {
