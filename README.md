@@ -2,7 +2,7 @@
 and Windows 11 successfully. In addition to this, I am working on video guides on each of these
 setup processes.*
 
-# Steps to set up the programming environment for the NUCLEO-F446RE on a MacOs machine.
+# Steps to set up the programming environment for the NUCLEO-F446RE on a MacOS machine.
 
 # Steps to set up the programming environment for the NUCLEO-F446RE on a Linux machine.
 
@@ -78,6 +78,7 @@ menu until the System environment variables until all windows are all closed.
 **8.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
 the command `stflash --version` and it should respond with the version of the stflash tool.
 
+
 # VSCode Configuration For All Operating Systems (You can use any editor you want to if you are familiar with terminal and Make) 
 
 **1.** Open VSCode and open a new terminal. If you are unfamiliar with the command terminal, that is 
@@ -111,7 +112,7 @@ information on the error received in the terminal.
 ## The setup for the environment should be complete after this. 
 
 To build the code, I have included a couple tasks in the .vscode\tasks.json file. To invoke these 
-task commands, the default shortcut is Ctrl+Shift+B. 
+task commands, the default shortcut is `Ctrl+Shift+B` (`Cmd+Shift+B` on MacOS). 
 
 Explanation of each included task:
 
@@ -121,7 +122,7 @@ uploading/debugging the microcontroller of the device. The files are found in th
 Build clean will clear the build directory of all files. This is useful for ensuring new code is 
 compiled and linked on a new build and this task executes everytime before a Build all task is run.
 
-Flash controller flashes the bin file to the controller. Whoa.. who could have guessed.
+Flash controller flashes the main.bin file to the controller. Whoa.. who could have guessed.
 
 Open UART Terminal is specific to Linux and MacOS and uses the `screen` command to work. I have not
 yet found a good alternative for Windows, but you can always use a terminal emulator like TeraTerm.
