@@ -8,7 +8,7 @@
             "command": "make",
             "args": [
                 "all",
-                "PROJECT_NAME=${config:project_name}",
+                "FN=${config:project_name}",
                 "-j4"
             ],
             "dependsOn": "Build clean"
@@ -19,7 +19,7 @@
             "type": "shell",
             "command": "make",
             "args": [
-                "PROJECT_NAME=${config:project_name}",
+                "FN=${config:project_name}",
                 "clean"
             ]
         },

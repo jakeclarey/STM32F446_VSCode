@@ -3,7 +3,7 @@
 ###################################################################################################
 
 # Project folder name holder (default to build Blinky if not specified in tasks.json or on CLI)
-PROJECT_NAME = Blinky
+FN = Blinky
 
 # make target should be named "main"
 TARGET = main
@@ -19,13 +19,13 @@ BUILD_DIR = !build
 # sources
 ###################################################################################################
 # C sources
-C_SOURCES = $(wildcard $(PROJECT_NAME)/Src/*.c)
+C_SOURCES = $(wildcard $(FN)/Src/*.c)
 
 # C++ sources
-CPP_SOURCES = $(wildcard $(PROJECT_NAME)/Src/*.cpp)
+CPP_SOURCES = $(wildcard $(FN)/Src/*.cpp)
 
 # ASM sources
-ASM_SOURCES = $(wildcard $(PROJECT_NAME)/Src/*.s)
+ASM_SOURCES = $(wildcard $(FN)/Src/*.s)
 ASM_SOURCES += $(wildcard !DeviceSpecific/*.s)
 
 ###################################################################################################
@@ -78,12 +78,12 @@ AS_INCLUDES =
 
 # C includes
 C_INCLUDES =  \
--I$(PROJECT_NAME)/Inc \
+-I$(FN)/Inc \
 -I!DeviceSpecific/Drivers/CMSIS \
 -I!DeviceSpecific/Drivers/Device
 
 CPP_INCLUDES = \
--I$(PROJECT_NAME)/Core/Inc \
+-I$(FN)/Core/Inc \
 
 # compile gcc flags
 ASFLAGS = $(MCU) $(AS_DEFS) $(AS_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections
@@ -121,8 +121,8 @@ help:
 	@echo Available Targets:
 	@echo 	flash: Flashes main.bin in build directory to NUCLEO-F446RE via stlink.
 	@echo 		Usage: make flash
-	@echo 	all PROJECT_NAME=folder_name: Builds specified project.
-	@echo 		Usage: make all PROJECT_NAME=folder_name
+	@echo 	all FN=folder_name: Builds specified project.
+	@echo 		Usage: make all FN=folder_name
 	@echo 	clean: Cleans out the build directory.
 	@echo 		Usage: make clean
 	@echo 	help: Display this help text. 
