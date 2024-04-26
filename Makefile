@@ -137,7 +137,7 @@ help:
 .PHONY: flash
 
 flash: $(BUILD_DIR)/$(TARGET).bin
-	st-flash --reset write $< 0x0800000
+	st-flash --reset write $< 0x08000000
 
 ###################################################################################################
 # all
