@@ -23,6 +23,8 @@
  * PREPROCESSOR DIRECTIVES
  *************************************************************************************************/
 
+#define BLINK_DELAY 500 // blink period in milliseconds
+
 #define LD2_PORT GPIOA
 #define LD2_PIN 5
 

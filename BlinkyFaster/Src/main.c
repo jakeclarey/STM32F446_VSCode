@@ -6,10 +6,8 @@
  * VSCode STM32 programming environment using a GNU Makefile. This can be modified for other MCUs.
  *************************************************************************************************/
 
-#include "blink.h"
+#include "blinkFaster.h"
 #include <stm32f446xx.h>
-
-#define BLINK_DELAY 100 // blink period in milliseconds
 
 int main(void)
 {

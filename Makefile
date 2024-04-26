@@ -142,7 +142,7 @@ flash: $(BUILD_DIR)/$(TARGET).bin
 ###################################################################################################
 .PHONY: all
 
-all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
+all: clean | $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 
 ###################################################################################################
 # build the application

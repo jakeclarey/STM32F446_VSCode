@@ -9,8 +9,6 @@
 #include "blink.h"
 #include <stm32f446xx.h>
 
-#define BLINK_DELAY 500 // blink period in milliseconds
-
 int main(void)
 {
   systickInit();

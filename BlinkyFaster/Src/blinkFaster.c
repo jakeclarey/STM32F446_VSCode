@@ -6,7 +6,7 @@
  * environment. It contains function definitions to blink LD2 on the NUCLEO-F446RE board.
  *************************************************************************************************/
 
-#include "blink.h"
+#include "blinkFaster.h"
 
 /**************************************************************************************************
  * FUNCTION DEFINITIONS
