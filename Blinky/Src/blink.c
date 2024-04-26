@@ -32,4 +32,24 @@ void bruteDelay(uint32_t n)
   }
 }
 
+/// @brief This functions initializes the Systick timer for basic delays at millisecond scale
+void systickInit(void)
+{
+  SysTick->CTRL = 0;
+  SysTick->LOAD = 0x00FFFFFF;
+  SysTick->VAL = 0;
+  SysTick->CTRL |= 5;
+}
+
+/// @brief This functions delays for a specified amount of milliseconds
+/// @param n is the number of milliseconds to delay
+void systickDelayMS(uint32_t n)
+{
+  SysTick->LOAD = 16000 * (n - 1);
+  SysTick->VAL = 0;
+  while (!(SysTick->CTRL & (1U << 16)))
+  {
+  }
+}
+
 /* EOF */

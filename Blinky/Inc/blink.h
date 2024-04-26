@@ -18,6 +18,9 @@ void initLD2(void);
 void toggleLD2(void);
 void bruteDelay(uint32_t n);
 
+void systickInit(void);
+void systickDelayMS(uint32_t n);
+
 #endif // __BLINK_H__
 
 /* EOF */
