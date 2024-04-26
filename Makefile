@@ -113,7 +113,35 @@ LIBS = -lc -lm -lnosys
 LIBDIR = 
 LDFLAGS = $(MCU) --specs=nano.specs -T$(LDSCRIPT) $(LIBDIR) $(LIBS) -Wl,-Map=$(BUILD_DIR)/$(TARGET).map,--cref -Wl,--gc-sections
 
-# default action: build all
+###################################################################################################
+# help
+###################################################################################################
+.PHONY: help
+
+# default action: help
+help:
+	@echo Available Targets:
+	@echo 	flash: Flashes main.bin to NUCLEO-F446RE board via stlink.
+	@echo 	Usage: make flash
+	@echo 	all PROJECT_NAME=folder_name: Builds specified project.
+	@echo 	Usage: make all PROJECT_NAME=folder_name
+	@echo 	clean: Cleans out the build directory.
+	@echo 	Usage: make clean
+	@echo 	help: Display this help text. 
+	@echo 	Usage: make help
+
+
+###################################################################################################
+# flash
+###################################################################################################
+.PHONY: flash
+
+flash: $(BUILD_DIR)/$(TARGET).bin
+	st-flash --reset write $< 0x0800000
+
+###################################################################################################
+# all
+###################################################################################################
 all: $(BUILD_DIR)/$(TARGET).elf $(BUILD_DIR)/$(TARGET).hex $(BUILD_DIR)/$(TARGET).bin
 
 ###################################################################################################
