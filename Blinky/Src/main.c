@@ -11,14 +11,14 @@
 
 int main(void)
 {
-  systickInit();
-  initLD2();
+    systickInit();
+    initLD2();
 
-  while (1)
-  {
-    systickDelayMS(BLINK_DELAY);
-    toggleLD2();
-  } // while(1)
+    while (1)
+    {
+        systickDelayMS(BLINK_DELAY);
+        toggleLD2();
+    } // while(1)
 } // main(void)
 
 /* EOF */
