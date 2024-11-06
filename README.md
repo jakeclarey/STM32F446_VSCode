@@ -2,114 +2,26 @@
 and Windows 11 successfully. In addition to this, I am working on video guides on each of these
 setup processes.*
 
-# Steps to set up the programming environment for the NUCLEO-F446RE on a MacOS machine.
+*For Windows 10/11 (possibly 8 have not tested), I have created a separate repository with 
+batchfile setup scripts. This is to make the environment setup process easier for an average user
+as Windows is typically a nightmare setup-wise.*
 
-# Steps to set up the programming environment for the NUCLEO-F446RE on a Linux machine.
+The Windows 10/11 batchfile repository can be found here:
+https://github.com/jakeclarey/F446RE_WindowsEnvironmentSetupScripts
 
-# Steps to set up the programming environment for the NUCLEO-F446RE on a Windows 10 machine.
+# What is This
+This is a project organization scheme that I use for STM32 development. This specific one is made
+for the STM32F446RE microcontroller. I have used other ST MCUs and pretty much just clone this 
+project and update it to whatever MCU I decided to go with for a project.
 
-## Installing GNU Make to use the Makefile on Windows
+It was initially designed to work on MacOS for register level programming outside of STM32CubeIDE.
+I started working with a MacOS machine and needed to do register level programming for class and
+have since created this and adapted it to Windows as well (This project has also been tested using
+Linux Mint). I enjoyed the customization of VS Code and wanted a way to bring it to the course.
 
-**1.** Install GNU Make from https://gnuwin32.sourceforge.net/packages/make.htm using the 
-"Setup program" option for installing.
+This environment and all its included tasks should be compatible with Windows, MacOS, and Linux.
 
-**2.** Press the Windows key and type "path" to "Edit the system environment variables."
-
-**3.** In this menu, press "Environment Variables...", then click the row that says "Path" in the upper 
-table and then press edit. 
-
-**4.** In here, press "New" and enter this file path "C:\Program Files (x86)\GnuWin32\bin" without the 
-quotes. Then, press "Ok" in each menu until the System environment variables windows are all closed.
-
-**5.** To test if this worked, open VSCode as an administrator and open a new terminal. Type the 
-command `make --version` and it should respond with the version of GNU Make. You may have to exit 
-and reopen VSCode after installing GNU Make for it to work.
-
-
-## Installing the GCC ARM Compiler on Windows 
-
-**1.** Install gcc-arm-none-eabi-XXXXXXX-win32.exe from the following website 
-https://developer.arm.com/downloads/-/gnu-rm.
-
-**2.** Run the installer tool and when it completes, make sure to check the 
-"Add path to  environment variable" box and then select "Finish."
-
-**3.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
-the command `arm-none-eabi-gcc --version` and it should respond with the version of the ARM GCC 
-Compiler.
-
-
-## Installing CMake on Windows
-
-**1.** Install cmake-XXXX-windows-x86_64.msi from the following website https://cmake.org/download/.
-
-**2.** Run the installer tool and check the circle titled "Add CMake to the system PATH for all users." 
-Then continue installing by pressing next in each following dialogue.
-
-**3.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
-the command `cmake --version` and it should respond with the version of CMake.
-
-
-## Installing the ST-Link Tool on Windows
-
-**1.** Open the following github repository https://github.com/stlink-org/stlink and on the right side 
-of the website click on "Release v1.x.x" under the releases tab. This will take you to the releases
-page.
-
-**2.** On this releases page, go to version 1.7.0 and download the file titled 
-"stlink-1.7.0-x86_64-w64-mingw32.zip" and go to the File Explorer location for it.
-
-**3.** Extract the .zip in your File Explorer downloads open the folder and then copy the folder titled
-"stlink-1.7.0-x86_64-w64-mingw32.zip" that contains the "bin" folder. MAKE SURE IT IS THE CORRECT 
-FOLDER WHEN EXTRACTED. SOMETIMES DUPLICATES OCCUR AND IT CAN CAUSE A TON OF ISSUES.
-
-**4.** Navigate to the C:/ drive of the laptop and create a new folder titled "stlink", open the new 
-folder and paste the copied folder.
-
-**5.** Press the Windows key and type "path" to "Edit the system environment variables."
-
-**6.** In this menu, press "Environment Variables...", then click the row that says "Path" in the upper 
-table and then press edit. 
-
-**7.** In here, press "New" and enter this file path  
-"C:\stlink\stlink-1.7.0-x86_64-w64-mingw32.zip\bin" without the quotes. Then, press "Ok" in each 
-menu until the System environment variables until all windows are all closed.
-
-**8.** To test if this worked, exit and reopen VSCode as an administrator and open a new terminal. Type
-the command `stflash --version` and it should respond with the version of the stflash tool.
-
-
-# VSCode Configuration For All Operating Systems (You can use any editor you want to if you are familiar with terminal and Make) 
-
-**1.** Open VSCode and open a new terminal. If you are unfamiliar with the command terminal, that is 
-okay. What this step is for is for getting this repository onto your device.
-
-**2.** In the terminal, type `git clone https://github.com/jakeclarey/STM32F446_VSCODE/`. 
-This should clone the repository to your device. Within here, open the Makefile. If you do not have git nor 
-want to use git, (*why and how are you reading this*), go to that github link and download the repository as 
-a .zip file. Then open the whole folder in VSCode. You may place the repository anywhere on your machine.
-
-~~**3.** In the Makefile at the very top, there is a variable titled `MACOS_LINUX`. If you are using 
-MacOS or Linux, set the variable equal to 1, if on Windows, set the variable equal to 0. 
-
-*This is important for the `make clean` rule. The way to clean a directory is different between 
-MacOS/Linux and Windows. This variable is here to keep you, the user, out of the Makefile. The Makefile
-can be confusing to understand if unfamiliar, and I want this to be as simple as possible.*~~ deprecated
-
-**4.** Open the terminal again, type `make all` and this should build the default Blinky project. If it
-does not work. Look up the error code you receive and try to debug it. I am unsure about what errors can
-occur because I don't run into them as frequently anymore. **One error I am aware of is the 
-`missing separator` error. What this means is that somewhere in the code, a `tab` was replaced with a 
-`space` which are interpreted differently by GNU Make. To fix this I recommend skimming the file where
-tabs should be, and re-entering them, or the painful route, create a new Makefile and type up the same
-text as the original one letter-by-letter. Odds are the the painful route is unnecessary.**
-
-**5.** Now in the same terminal, enter `make clean`. This should clear out the !build folder. If it does
-not, then the `make clean` selection for your operating system is bugged. To fix it, check and make sure
-the `MACOS_LINUX` variable is set properly from step **3.** and then if it continues to fail, check for
-information on the error received in the terminal.
-
-## The setup for the environment should be complete after this. 
+## Included Tasks
 
 To build the code, I have included a couple tasks in the .vscode\tasks.json file. To invoke these 
 task commands, the default shortcut is `Ctrl+Shift+B` (`Cmd+Shift+B` on MacOS). 
@@ -124,16 +36,8 @@ compiled and linked on a new build and this task executes everytime before a Bui
 
 Flash controller flashes the main.bin file to the controller. Whoa.. who could have guessed.
 
-Open UART Terminal is specific to Linux and MacOS and uses the `screen` command to work. I have not
-yet found a good alternative for Windows, but you can always use a terminal emulator like TeraTerm.
-To exit this terminal, press `Cmd+A Cmd+K` and then type `Y`. *This will be used for viewing
-redirected printf() functions to a UART terminal in the future, I just have to figure out how to
-redirect them myself first*
-
-DFU controller is another way of flashing the code to the controller. It uses the dfu-util 
-toolchain, I have not included steps on installing that on a Windows machine. This is because it 
-does not apply to the board of this project by default.
-
-DFU can be configured to work, but it is a lengthy process. DFU is mostly for flashing custom 
-hardware. If you would like to know more about testing DFU on a NUCLEO board, I have done it before
-and would be happy to explain the steps if you contact me. 
+# Where are the MacOS or Linux setup Instructions??
+I simply have not made them yet. A quick rundown of what packages are needed for MacOS and Linux 
+are make, gcc-arm-embedded, stutil (found on a github repository by st-org), and libusb (found 
+on a github repository by libusb). Of course, VS Code and a few extensions are also required. Those
+extensions being, C/C++ Tools, marus25's Cortex-Debug. The rest of customization is up to the user.
