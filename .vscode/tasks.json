@@ -36,34 +36,6 @@
                 "0x08000000"
             ],
             "dependsOn": "Build all",
-        },
-        {
-            "label": "DFU Controller",
-            "group": "build",
-            "type": "shell",
-            "command": "dfu-util",
-            "args": [
-                "-a",
-                "0",
-                "-D",
-                "!build/main.bin",
-                "-s",
-                "0x08000000",
-                "-R",
-                "-v"
-            ],
-            "dependsOn": "Build all",
-        },
-        {
-            "label": "Open UART Terminal",
-            "group": "build",
-            "type": "shell",
-            "command": "screen",
-            "args": [
-                "/dev/tty.usbmodem*",
-                "115200",
-                "8N1"
-            ]
         }
     ]
 }
